@@ -1,0 +1,70 @@
+name: Build
+description: Build a small working implementation and capture proof
+title: "Build - "
+labels: ["cert", "type/build"]
+body:
+  - type: dropdown
+    id: cert
+    attributes:
+      label: Certification
+      options:
+        - Serverless Microcredential
+        - DVA-C02
+        - SAA-C03
+        - TOGAF
+    validations:
+      required: true
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Domain
+      options:
+        - Lambda
+        - API Gateway
+        - DynamoDB
+        - IAM & Security
+        - Eventing (Eventbridge/SQS)
+        - Observability (Cloudwatch)
+        - Cost & Scaling
+        - Deployment / IaC
+        - Foundations
+        - Exam Readiness
+    validations:
+      required: true
+  - type: dropdown
+    id: effort
+    attributes:
+      label: Effort
+      options:
+        - S (<=45 min)
+        - M (45-90 min)
+        - L (90-180 min)
+    validations:
+      required: true
+  - type: dropdown
+    id: stageops
+    attributes:
+      label: StageOps Tie-In
+      options:
+        - None
+        - Direct (StageOps feature)
+        - Indirect (Reusable pattern/demo)
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope (keep it small)
+      placeholder: "HTTP endpoint -> Lambda -> DynamoDB CRUD; include structured logging"
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: Implement
+        - label: Deploy/test locally or in AWS
+        - label: Document tradeoffs (README)
+        - label: Commit + Push
+        - label: Add Artifact Link (commit/PR URL)
