@@ -1,0 +1,72 @@
+name: Topic
+description: Learn a concept and produce an artifact (notes/diagrams/README)
+title: "Topic - [Domain]: "
+labels: ["cert", "type/topic"]
+body:
+  - type: dropdown
+    id: cert
+    attributes:
+      label: Certification
+      options:
+        - Serverless Microcredential
+        - DVA-C02
+        - SAA-C03
+        - TOGAF
+    validations:
+      required: true
+
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Domain
+      options:
+        - Foundations
+        - Lambda
+        - API Gateway
+        - DynamoDB
+        - IAM & Security
+        - Eventing (Eventbridge/SQS)
+        - Observability (Cloudwatch)
+        - Cost & SCaling
+        - Deployment / IaC
+        - Exam Readiness
+    validations: 
+      required: true
+
+  - type: dropdown
+    id: effort
+    attributes:
+      label: Effort
+      options:
+        - S (<=45 min)
+        - M (45-90 min)
+        - L (90-180 min)
+    validations:
+      required: true
+  - type: dropdown
+    id: weight
+    attributes:
+      label: Exam Weight
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal (Definition of Done)
+      description: What will you be able to explain/do after this?
+      placeholder: "Explain X in 2 minutes + add READM notes + diagram link"
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: Watch/skim core explanation (<= 30 min)
+        - label: Apply in code OR map to StageOps scenario (<= 45 min)
+        - label: Explain in my own words (README/notes)
+        - label: Add Artifact Link (commit/PR/diagram URL)
